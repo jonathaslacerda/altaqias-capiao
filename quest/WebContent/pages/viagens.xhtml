@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="../template.xhtml">
+	<ui:define name="title">Viajar</ui:define>
+	<ui:define name="conteudo">
+		<div class="row">
+			<div class="col-sm-12 widget-container-col">
+				<!-- #section:custom/widget-box.options.transparent -->
+				<div class="widget-box transparent">
+					<div class="widget-header">
+						<h4 class="widget-title lighter">Pessoas lhe aguardam para viajar</h4>
+					</div>
+
+					<div class="widget-body">
+						<div class="widget-main padding-6 no-padding-left no-padding-right">
+							<div class="row">
+								<ui:repeat var="quest" value="#{ViagensBean.quests}">
+									<div class="col-sm-3">
+										<div class="widget-box transparent">
+											<div class="widget-header">
+												<h4 class="widget-title lighter">Eu vou viajar e preciso economizar!</h4>
+											</div>
+						
+											<div class="widget-body">
+												<div class="widget-main padding-6 no-padding-left no-padding-right">
+													<div class="row">
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</ui:repeat>
+								
+								<div class="col-sm-3">
+									<div class="widget-box widget-color-blue">
+										<div class="widget-header bottom">
+											<div class="widget-title lighter col-xs-6 col-sm-6 align-left">
+												<i class="ace-icon fa fa-calendar white bigger-110" />
+												19/02/2017
+											</div>
+											<div class="widget-title lighter col-xs-6 col-sm-6 ">
+												<i class="ace-icon fa fa-plane white bigger-110" />
+												Akihabara-Japão
+											</div>
+										</div>
+					
+										<div class="widget-body">
+											<div class="widget-main">
+												<ul style="list-style-type: none">
+												  <li>
+												  	<i class="ace-icon fa fa-tag green bigger-110" />
+												  	<label>Hospedagem</label>
+												  </li>
+												  <li>
+												  	<i class="ace-icon fa fa-tag green bigger-110"></i>
+												  	<label>Passagens aéreas</label>
+												  </li>
+												  <li>
+												  	<i class="ace-icon fa fa-tag green bigger-110" />
+												  	<label>Guia turístico</label>
+												  </li>
+												</ul>
+											</div>
+										</div>
+										<div class="clearfix form-actions align-right">
+											<div class="widget-title lighter col-xs-6 col-sm-6 align-left">
+												<i class="ace-icon fa fa-users"></i>
+												3/5
+											</div>
+											<div class="widget-title lighter col-xs-6 col-sm-6 ">
+												<i class="ace-icon fa fa-money"></i>
+												R$20.000,00
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="col-sm-3">
+									<div class="widget-box widget-color-dark">
+										<div class="widget-header">
+											<div class="widget-title lighter col-xs-6 col-sm-6 align-left">
+												<i class="ace-icon fa fa-calendar white bigger-110" />
+												19/02/2017
+											</div>
+											<div class="widget-title lighter col-xs-6 col-sm-6 ">
+												<i class="ace-icon fa fa-plane white bigger-110" />
+												Akihabara-Japão
+											</div>
+										</div>
+					
+										<div class="widget-body">
+											<div class="widget-main">
+												<ul style="list-style-type: none">
+												  <li>
+												  	<i class="ace-icon fa fa-tag green bigger-110" />
+												  	<label>Hospedagem</label>
+												  </li>
+												  <li>
+												  	<i class="ace-icon fa fa-tag green bigger-110"></i>
+												  	<label>Passagens aéreas</label>
+												  </li>
+												  <li>
+												  	<i class="ace-icon fa fa-tag green bigger-110" />
+												  	<label>Guia turístico</label>
+												  </li>
+												</ul>
+											</div>
+										</div>
+										<div class="clearfix form-actions align-right">
+											<div class="widget-title lighter col-xs-6 col-sm-6 align-left">
+												<i class="ace-icon fa fa-users"></i>
+												5/5
+											</div>
+											<div class="widget-title lighter col-xs-6 col-sm-6 ">
+												<i class="ace-icon fa fa-money"></i>
+												R$20.000,00
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="col-sm-3">
+									<div class="widget-box widget-color-red">
+										<div class="widget-header bottom">
+											<div class="widget-title lighter col-xs-6 col-sm-6 align-left">
+												<i class="ace-icon fa fa-calendar white bigger-110" />
+												19/02/2017
+											</div>
+											<div class="widget-title lighter col-xs-6 col-sm-6 ">
+												<i class="ace-icon fa fa-plane white bigger-110" />
+												Akihabara-Japão
+											</div>
+										</div>
+					
+										<div class="widget-body">
+											<div class="widget-main">
+												<ul style="list-style-type: none">
+												  <li>
+												  	<i class="ace-icon fa fa-tag green bigger-110" />
+												  	<label>Hospedagem</label>
+												  </li>
+												  <li>
+												  	<i class="ace-icon fa fa-tag green bigger-110"></i>
+												  	<label>Passagens aéreas</label>
+												  </li>
+												  <li>
+												  	<i class="ace-icon fa fa-tag green bigger-110" />
+												  	<label>Guia turístico</label>
+												  </li>
+												</ul>
+											</div>
+										</div>
+										<div class="clearfix form-actions align-right">
+											<div class="widget-title lighter col-xs-6 col-sm-6 align-left">
+												<i class="ace-icon fa fa-users"></i>
+												4/5
+											</div>
+											<div class="widget-title lighter col-xs-6 col-sm-6 ">
+												<i class="ace-icon fa fa-money"></i>
+												R$20.000,00
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- /section:custom/widget-box.options.transparent -->
+			</div>
+
+		</div>
+	</ui:define>
+</ui:composition>
+</html>
