@@ -19,156 +19,52 @@
 
 					<div class="widget-body">
 						<div class="widget-main padding-6 no-padding-left no-padding-right">
-							<div class="row">
-								<ui:repeat var="quest" value="#{ViagensBean.quests}">
-									<div class="col-sm-3">
-										<div class="widget-box transparent">
-											<div class="widget-header">
-												<h4 class="widget-title lighter">Eu vou viajar e preciso economizar!</h4>
-											</div>
-						
-											<div class="widget-body">
-												<div class="widget-main padding-6 no-padding-left no-padding-right">
-													<div class="row">
+							<h:panelGroup rendered="#{ViagensBean.erro eq null}">
+								<div class="row">
+									<ui:repeat var="quest" value="#{ViagensBean.viagens}">
+										<div class="col-sm-3">
+											<div class="widget-box widget-color-blue">
+												<div class="widget-header bottom">
+													<div class="widget-title lighter col-xs-6 col-sm-6 ">
+														<i class="ace-icon fa fa-plane white bigger-110" />
+														#{quest.destino.cidade.nome} - #{quest.destino.cidade.estado.nome} - #{quest.destino.cidade.estado.pais.nome}
+													</div>
+												</div>
+							
+												<div class="widget-body">
+													<div class="widget-main">
+														<i class="ace-icon fa fa-map-marker green bigger-110" />
+														#{quest.destino.nome}
+														<h:form>
+															<h:commandLink disabled="#{ViagensBean.inscricaoJaRealizada()}" actionListener="#{ViagensBean.irTambem(quest.id)}">
+																<button class="btn btn-white btn-warning #{ViagensBean.inscricaoJaRealizada()?'disabled':''} btn-round">
+																	<i class="ace-icon fa fa-times red2"></i>
+																	Eu quero ir tambem!
+																</button>
+															</h:commandLink>
+														</h:form>
+													</div>
+												</div>
+												<div class="clearfix form-actions no-margin-bottom" style="padding: 4px !important;">
+													<div class="pull-left">
+														<i class="ace-icon fa fa-users"></i>
+														#{quest.inscricoes.size()}/#{quest.maximoParticipantes}
+													</div>
+													<div class="pull-right">
+														<i class="ace-icon fa fa-money"></i>
+														R$ <h:outputText value="#{quest.fundo}" converter="DinheiroConverter"/>
 													</div>
 												</div>
 											</div>
 										</div>
-									</div>
-								</ui:repeat>
-								
-								<div class="col-sm-3">
-									<div class="widget-box widget-color-blue">
-										<div class="widget-header bottom">
-											<div class="widget-title lighter col-xs-6 col-sm-6 align-left">
-												<i class="ace-icon fa fa-calendar white bigger-110" />
-												19/02/2017
-											</div>
-											<div class="widget-title lighter col-xs-6 col-sm-6 ">
-												<i class="ace-icon fa fa-plane white bigger-110" />
-												Akihabara-Japão
-											</div>
-										</div>
-					
-										<div class="widget-body">
-											<div class="widget-main">
-												<ul style="list-style-type: none">
-												  <li>
-												  	<i class="ace-icon fa fa-tag green bigger-110" />
-												  	<label>Hospedagem</label>
-												  </li>
-												  <li>
-												  	<i class="ace-icon fa fa-tag green bigger-110"></i>
-												  	<label>Passagens aéreas</label>
-												  </li>
-												  <li>
-												  	<i class="ace-icon fa fa-tag green bigger-110" />
-												  	<label>Guia turístico</label>
-												  </li>
-												</ul>
-											</div>
-										</div>
-										<div class="clearfix form-actions align-right">
-											<div class="widget-title lighter col-xs-6 col-sm-6 align-left">
-												<i class="ace-icon fa fa-users"></i>
-												3/5
-											</div>
-											<div class="widget-title lighter col-xs-6 col-sm-6 ">
-												<i class="ace-icon fa fa-money"></i>
-												R$20.000,00
-											</div>
-										</div>
-									</div>
+									</ui:repeat>
 								</div>
-								
-								<div class="col-sm-3">
-									<div class="widget-box widget-color-dark">
-										<div class="widget-header">
-											<div class="widget-title lighter col-xs-6 col-sm-6 align-left">
-												<i class="ace-icon fa fa-calendar white bigger-110" />
-												19/02/2017
-											</div>
-											<div class="widget-title lighter col-xs-6 col-sm-6 ">
-												<i class="ace-icon fa fa-plane white bigger-110" />
-												Akihabara-Japão
-											</div>
-										</div>
-					
-										<div class="widget-body">
-											<div class="widget-main">
-												<ul style="list-style-type: none">
-												  <li>
-												  	<i class="ace-icon fa fa-tag green bigger-110" />
-												  	<label>Hospedagem</label>
-												  </li>
-												  <li>
-												  	<i class="ace-icon fa fa-tag green bigger-110"></i>
-												  	<label>Passagens aéreas</label>
-												  </li>
-												  <li>
-												  	<i class="ace-icon fa fa-tag green bigger-110" />
-												  	<label>Guia turístico</label>
-												  </li>
-												</ul>
-											</div>
-										</div>
-										<div class="clearfix form-actions align-right">
-											<div class="widget-title lighter col-xs-6 col-sm-6 align-left">
-												<i class="ace-icon fa fa-users"></i>
-												5/5
-											</div>
-											<div class="widget-title lighter col-xs-6 col-sm-6 ">
-												<i class="ace-icon fa fa-money"></i>
-												R$20.000,00
-											</div>
-										</div>
-									</div>
-								</div>
-								
-								<div class="col-sm-3">
-									<div class="widget-box widget-color-red">
-										<div class="widget-header bottom">
-											<div class="widget-title lighter col-xs-6 col-sm-6 align-left">
-												<i class="ace-icon fa fa-calendar white bigger-110" />
-												19/02/2017
-											</div>
-											<div class="widget-title lighter col-xs-6 col-sm-6 ">
-												<i class="ace-icon fa fa-plane white bigger-110" />
-												Akihabara-Japão
-											</div>
-										</div>
-					
-										<div class="widget-body">
-											<div class="widget-main">
-												<ul style="list-style-type: none">
-												  <li>
-												  	<i class="ace-icon fa fa-tag green bigger-110" />
-												  	<label>Hospedagem</label>
-												  </li>
-												  <li>
-												  	<i class="ace-icon fa fa-tag green bigger-110"></i>
-												  	<label>Passagens aéreas</label>
-												  </li>
-												  <li>
-												  	<i class="ace-icon fa fa-tag green bigger-110" />
-												  	<label>Guia turístico</label>
-												  </li>
-												</ul>
-											</div>
-										</div>
-										<div class="clearfix form-actions align-right">
-											<div class="widget-title lighter col-xs-6 col-sm-6 align-left">
-												<i class="ace-icon fa fa-users"></i>
-												4/5
-											</div>
-											<div class="widget-title lighter col-xs-6 col-sm-6 ">
-												<i class="ace-icon fa fa-money"></i>
-												R$20.000,00
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+							</h:panelGroup>
+							
+							
+							<h:panelGroup rendered="#{ViagensBean.erro ne null}">
+								<h3>#{ViagensBean.erro}</h3>
+							</h:panelGroup>
 						</div>
 					</div>
 				</div>

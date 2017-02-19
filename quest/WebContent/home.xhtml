@@ -9,47 +9,7 @@
 <ui:composition template="template.xhtml">
 	<ui:define name="title">Home</ui:define>
 	<ui:define name="conteudo">
-		<div class="row">
-			<div class="col-sm-12 widget-container-col">
-				<!-- #section:custom/widget-box.options.transparent -->
-				<div class="widget-box transparent">
-					<div class="widget-header">
-						<h4 class="widget-title lighter">Viagens</h4>
-
-						<div class="widget-toolbar no-border">
-							<a href="#" data-action="settings">
-								COLOCAR UM INPUT PARA SEARCH
-							</a>
-						</div>
-					</div>
-
-					<div class="widget-body">
-						<div class="widget-main padding-6 no-padding-left no-padding-right">
-							<div class="row">
-								<div class="col-sm-3">
-								1
-								</div>
-								
-								<div class="col-sm-3">
-								2
-								</div>
-								
-								<div class="col-sm-3">
-								3
-								</div>
-								
-								<div class="col-sm-3">
-								4
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- /section:custom/widget-box.options.transparent -->
-			</div>
-
-		</div>
+		<ui:include src="./pages/viagens.xhtml" />
 	</ui:define>
 </ui:composition>
 </html>
