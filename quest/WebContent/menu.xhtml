@@ -6,248 +6,28 @@
 	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
 	xmlns:p="http://primefaces.org/ui">
 
-	<ul class="nav nav-list">
-		<li class="hsub hover">
-			<a href="#" class="dropdown-toggle">
-				<i class="menu-icon fa fa-users"></i>
-				<span class="menu-text">Atendimento</span>
-				<b class="arrow fa fa-angle-down"></b>
-			</a>
-			<b class="arrow"></b>
-			<ul class="submenu">
-				<li class="hover">
-					<a href="#{request.contextPath}/pages/imoveis/manutencao/processo.snr">
-						<i class="menu-icon fa fa-caret-right" />
-						Protocolar Documentos
-					</a>
-				</li>
-			</ul>			
-		</li>
-		<li class="hsub hover">
-			<a href="#" class="dropdown-toggle">
-				<i class="menu-icon fa fa-desktop"></i>
-				<span class="menu-text">Operações</span>
-				<b class="arrow fa fa-angle-down"></b>
-			</a>
-			<b class="arrow"></b>
-			<ul class="submenu" style="width: 210px;">
-				<li class="hover">
-					<a href="#{request.contextPath}/pages/imoveis/manutencao/matricula.snr">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Abrir Matrícula
-					</a>
-				</li>
-				<li class="hover">
-					<a href="#{request.contextPath}/pages/imoveis/manutencao/livro2.snr">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Registrar e Averbar - Livro 2 
-					</a>
-				</li>
-				<li class="hover">
-					<a href="#{request.contextPath}/pages/imoveis/manutencao/livro3.snr">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Registrar e Averbar - Livro 3
-					</a>
-				</li>
-			</ul>
-		</li>
-		
-		<li class="hsub hover">
-			<a href="#" class="dropdown-toggle">
-				<i class="menu-icon fa fa-book"></i>
-				<span class="menu-text">Livros</span>
-				<b class="arrow fa fa-angle-down"></b>
-			</a>
-			<b class="arrow"></b>
-			<ul class="submenu">
-				<li class="hover">
-					<a href="#{request.contextPath}/pages/imoveis/impressao/protocoloGeral.snr">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Livro 1 - Protocolo Geral
-					</a>
-				</li>		
-				<li class="hover">
-					<a href="#{request.contextPath}/pages/imoveis/impressao/livro2.snr">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Livro 2 - Ficha
-					</a>
-				</li>
-				<li class="hover">
-					<a href="#{request.contextPath}/pages/imoveis/impressao/livro3.snr">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Livro 3 - Auxiliar
-					</a>
-				</li>
-			</ul>
-		</li>
-		
-		<li class="hsub hover">
-			<a href="#" class="dropdown-toggle">
-				<i class="menu-icon fa fa-file-o"></i>
-				<span class="menu-text">Certidões</span>
-				<b class="arrow fa fa-angle-down"></b>
-			</a>
-			<b class="arrow"></b>
-			<ul class="submenu">
-				<ui:repeat var="menu" value="#{SessaoBean.definirMenuCertidao()}">
-					<li class="hover">
-						<a href="#{request.contextPath}#{menu.link}">
-							<i class="menu-icon fa fa-caret-right"></i>
-							#{menu.titulo}
-						</a>
-					</li>
-				</ui:repeat>
-			</ul>
-		</li>
-		
-		<li class="hsub hover">
-			<a href="#" class="dropdown-toggle">
-				<i class="menu-icon fa fa-map-marker"></i>
-				<span class="menu-text">Indicadores</span>
-				<b class="arrow fa fa-angle-down"></b>
-			</a>
-			<b class="arrow"></b>
-			<ul class="submenu">
-				<li class="hover">
-					<a href="#{request.contextPath}/pages/imoveis/indicador/pessoal.snr">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Pessoal
-					</a>
-				</li>
-				<li class="hover">
-					<a href="#{request.contextPath}/pages/imoveis/indicador/real.snr">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Real
-					</a>
-				</li>
-			</ul>
-		</li>
-		
-		<li class="hsub hover">
-			<a href="#" class="dropdown-toggle">
-				<i class="menu-icon fa fa-cog"></i>
-				<span class="menu-text">Manutenção</span>
-				<b class="arrow fa fa-angle-down"></b>
-			</a>
-			<b class="arrow"></b>
-			<ul class="submenu">
-				<li class="hover">
-					<a href="#{request.contextPath}/pages/imoveis/cadastrar/bairro.snr">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Bairro
-					</a>
-				</li>
-				<li class="hover">
-					<a href="#{request.contextPath}/pages/imoveis/cadastrar/edificio.snr">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Edifício
-					</a>
-				</li>
-				<li class="hover">
-					<a href="#{request.contextPath}/pages/imoveis/cadastrar/emissorDocumento.snr">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Emissor de Documento
-					</a>
-				</li>
-				<li class="hover">
-					<a href="#{request.contextPath}/pages/imoveis/cadastrar/formaAquisicao.snr">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Forma de Aquisição
-					</a>
-				</li>
-				<li class="hover">
-					<a href="#{request.contextPath}/pages/sistema/cadastrar/identificacao.snr">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Tipo de Identificação
-					</a>
-				</li>
-				<li class="hover">
-					<a href="#{request.contextPath}/pages/imoveis/cadastrar/logradouro.snr">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Logradouro
-					</a>
-				</li>
-				<li class="hover">
-					<a href="#{request.contextPath}/pages/imoveis/cadastrar/medida.snr">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Medida
-					</a>
-				</li>
-				<li class="hover">
-					<a href="#{request.contextPath}/pages/sistema/cadastrar/nacionalidade.snr">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Nacionalidade
-					</a>
-				</li>
-				<li class="hover">
-					<a href="#{request.contextPath}/pages/sistema/cadastrar/profissao.snr">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Profissão
-					</a>
-				</li>
-				<li class="hover">
-					<a href="#{request.contextPath}/pages/sistema/cadastrar/qualificacao.snr">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Qualificação
-					</a>
-				</li>
-				<li class="hover">
-					<a href="#{request.contextPath}/pages/imoveis/cadastrar/situacaoImovel.snr">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Situação do Imóvel
-					</a>
-				</li>
-				<li class="hover">
-					<a href="#{request.contextPath}/pages/imoveis/cadastrar/tipoDocumento.snr">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Tipo de Documento
-					</a>
-				</li>
-				<li class="hover">
-					<a href="#{request.contextPath}/pages/imoveis/cadastrar/tipoImovel.snr">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Tipo de Imóvel
-					</a>
-				</li>
-				<li class="hover">
-					<a href="#{request.contextPath}/pages/imoveis/cadastrar/tipoLogradouro.snr">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Tipo de Logradouro
-					</a>
-				</li>
-				<!-- 
-				<li class="hover">
-					<a href="#{request.contextPath}/pages/imoveis/cadastrar/tipoTransacao.snr">
-						<i class="menu-icon fa fa-caret-right"></i>
-						Tipo de Transação
-					</a>
-				</li>
-				 -->
-			</ul>
-		</li>
-		
-		<!-- <li class="highlight hover hsub">
-			<a href="#" class="dropdown-toggle">
-				<i class="menu-icon fa fa-puzzle-piece"></i>
-				<span class="menu-text">Integração</span>
-				<b class="arrow fa fa-angle-right"></b>
-			</a>
-
-			<b class="arrow"></b>
-			<ul class="submenu" style="top: -108px;">
-				<li class="hover hsub">
-					<a href="#plugins/tools" class="dropdown-toggle">
-						<i class="menu-icon fa fa-caret-right"></i> Receita Federal - DOI
-						<b class="arrow fa fa-angle-right"></b>
-					</a>
-
-					<b class="arrow"></b>
-					<ul class="submenu">
-						<li class="hover"><a href="#{request.contextPath}/pages/imoveis/integracao/DOIGeracao.snr">Geração de Arquivo</a></li>
-						<li class="hover"><a href="#{request.contextPath}/pages/imoveis/integracao/DOICancelamentoRetificacao.snr">Cancelamento/Retificação</a></li>
-					</ul>
-				</li>
-			</ul>
-		  </li> -->
-	</ul>
+	<a href="#" class="btn btn-app btn-success" style="margin: 40px; margin-bottom: 10px; margin-top: 20px;">
+		<i class="ace-icon fa fa-plane bigger-230"></i>
+		Viajar
+	</a>
+	
+	<a href="#" class="btn btn-app btn-info" style="margin: 40px; margin-bottom: 10px; margin-top: 20px;">
+		<i class="ace-icon fa fa-check-square-o bigger-230"></i>
+		Inscricoes
+	</a>
+	
+	<a href="#" class="btn btn-app btn-purple" style="margin: 40px; margin-bottom: 10px; margin-top: 20px;">
+		<i class="ace-icon fa fa-credit-card bigger-230"></i>
+		Gastar
+	</a>
+	
+	<a href="#" class="btn btn-app btn-warning" style="margin: 40px; margin-bottom: 10px; margin-top: 20px;">
+		<i class="ace-icon fa fa-map-marker bigger-230"></i>
+		Viagens
+	</a>
+	
+	<a href="#" class="btn btn-app btn-danger" style="margin: 40px; margin-bottom: 10px; margin-top: 20px;">
+		<i class="ace-icon fa fa-cog bigger-230"></i>
+		Gerenciar
+	</a>
 </html>

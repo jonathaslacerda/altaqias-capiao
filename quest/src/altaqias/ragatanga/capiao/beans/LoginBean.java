@@ -40,4 +40,9 @@ public class LoginBean {
 		}
 		return "";
 	}
+	
+	public String sair(){
+		this.sessao.logout();
+		return "login?faces-redirect=true";
+	}
 }

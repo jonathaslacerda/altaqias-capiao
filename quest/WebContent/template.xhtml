@@ -52,7 +52,7 @@
 
 			<div class="navbar-header pull-left">
 				<h:form>
-					<a href="./pages/home.jsf" class="navbar-brand">
+					<a href="home.jsf" class="navbar-brand">
 						<h:graphicImage value="/resources/image/vcart_imoveis_logo.png" width="86" height="26" />
 					</a>
 				</h:form>
@@ -101,37 +101,14 @@
 
 
 	<div class="main-container" id="main-container">
-		<div class="sidebar responsive compact sidebar-fixed" id="sidebar">
-			<div class="sidebar-shortcuts" id="sidebar-shortcuts">
-				<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
-					<h:form>
-						<a href="./pages/sistema/manutencao/dadosPessoais.snr" title="Alterar dados pessoais."
-							style="margin-right: 5px;"
-							class="tooltip-link tooltip-info btn btn-info btn-sm">
-							<i class="ace-icon fa fa-pencil icon-only"></i>
-						</a>
-					</h:form>
-				</div>
-				<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
-					<span class="btn btn-success"></span>
-
-					<span class="btn btn-info"></span>
-
-					<span class="btn btn-warning"></span>
-
-					<span class="btn btn-danger"></span>
-				</div>
-			</div>
-
+		<div class="sidebar responsive sidebar-fixed" id="sidebar">
 			<ui:include src="menu.xhtml"/>
-			
-			<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse" style="z-index: 1;">
-				<i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
-			</div>
 		</div>
 
 		<div class="main-content">
-			<ui:insert name="conteudo" />
+			<div class="page-content">
+				<ui:insert name="conteudo" />
+			</div>
 		</div>
 		<!-- /.main-content -->
 
@@ -139,17 +116,10 @@
 			<div class="footer-inner">
 				<div class="footer-content" style="padding: 10px; line-height: 0px;">
 					<div class="pull-left" style="text-align: left">
-						<div class="blue" style="padding-top: 6px;">
-							<b>Aqui!</b>
-							O que??!
-						</div>
 						<div class="small text-muted" style="padding-top: 20px;">
 							<h:outputText value="&copy; 2015-2016 - Altaqias - Todos os direitos reservados" />
 						</div>
 					</div>
-					<span class="blue pull-right">
-						<h:graphicImage value="/resources/image/virtus-sm.png" />
-					</span>
 				</div>
 			</div>
 		</div>
