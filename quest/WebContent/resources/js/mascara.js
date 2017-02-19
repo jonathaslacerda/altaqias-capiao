@@ -21,6 +21,7 @@ function mascaraLoad(){
 	    }
 	}).trigger('focusout');
 
+	$('.mask-protocolo-processo').mask("9999-999999",{placeholder:" "});
 	$(".mask-passaporte").mask("9999999999",{placeholder:" "});
 	$(".mask-rne").mask("9999999999",{placeholder:" "});
 	$(".mask-rg").mask("9999999",{placeholder:" "});
@@ -28,6 +29,13 @@ function mascaraLoad(){
 	$(".mask-cpf").mask("999.999.999-99",{placeholder:" "});
 	$(".mask-cnpj").mask("99.999.999/9999-99",{placeholder:" "});
 	$(".mask-cep").mask("99999-999",{placeholder:" "});
+	$(".mask-ano-processo").mask("9999",{placeholder:" "});
+	$(".mask-numero-processo").mask("999999",{placeholder:" "});
+	$(".mask-controle-doi").mask("9999/999999",{placeholder:" "});
+	$(".mask-matricula").mask("999999",{placeholder:""});
+	$(".mask-numero-urbano-rural").focusout(function(){
+		$(this).val($(this).val().replace(/[a-zA-Z]/g, ''));
+	}).trigger('focusout');
 
 	$(".mask-decimal").priceFormat({
 		centsSeparator:',', 
@@ -57,6 +65,7 @@ function mascaraLoad(){
 		prefix:'R$ '
 	});
 	$(".uppercase").keyup(function() {
+        // Uppercase-ize contents
         this.value = this.value.toLocaleUpperCase();
     });
 }

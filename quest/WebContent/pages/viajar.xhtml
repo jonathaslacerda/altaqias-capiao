@@ -9,41 +9,106 @@
 <ui:composition template="../template.xhtml">
 	<ui:define name="title">Viajar</ui:define>
 	<ui:define name="conteudo">
-		<div class="row">
-			<div class="col-sm-12 widget-container-col">
-				<!-- #section:custom/widget-box.options.transparent -->
-				<div class="widget-box transparent">
-					<div class="widget-header">
-						<h4 class="widget-title lighter">Eu vou viajar e preciso economizar!</h4>
-					</div>
-
-					<div class="widget-body">
-						<div class="widget-main padding-6 no-padding-left no-padding-right">
-							<div class="row">
-								<div class="col-sm-3">
-								1
+		<h:form id="form-cadastro-viagem" prependId="false">
+			<div class="row">
+				<div class="col-sm-12 widget-container-col">
+					<!-- #section:custom/widget-box.options.transparent -->
+					<div class="widget-box transparent">
+						<div class="widget-header">
+							<h4 class="widget-title lighter">Eu vou viajar e preciso economizar!</h4>
+						</div>
+	
+						<div class="widget-body">
+							<div class="widget-main padding-6 no-padding-left no-padding-right">
+								<div class="row">
+									<div class="col-xs-12 col-sm-12">
+										<div class="form-group" style="width: 33.4% !important;">
+											<label for="cidade">Para qual cidade pretenden ir?</label>
+											<div>
+												<h:selectOneMenu id="cidade" styleClass="form-control chosen-select"
+													required="true" requiredMessage="Obrigatório."
+													converter="GenericConverter"
+													value="#{ViajarBean.destino.cidade}">
+													<f:selectItems value="#{ViajarBean.cidades()}" />
+													<f:ajax event="change" render="panel-local" execute="@this"/>
+												</h:selectOneMenu>
+												<h:message id="msg-cidade" for="cidade" errorStyle="color: #a94442;"/>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-12 col-sm-12">
+										<h:panelGroup id="panel-local">
+											<h:panelGroup rendered="#{ViajarBean.destino.cidade ne null}">
+												<div class="form-group">
+													<label for="cidade">Qual local de <b>#{ViajarBean.destino.cidade.nome}?</b></label>
+													<div>
+														<h:inputText styleClass="col-sm-6"
+																converter="ToUpperConverter"
+																value="#{ViajarBean.destino.nome}"
+																id="local">
+																<f:ajax event="blur" render="@this" immediate="true" />
+														</h:inputText>
+													</div>
+												</div>
+											</h:panelGroup>
+										</h:panelGroup>
+									</div>
 								</div>
 								
-								<div class="col-sm-3">
-								2
+								<div class="space-4" />
+								
+								<div class="row">
+									<div class="col-xs-12 col-sm-12">
+										<div class="form-group">
+											<label for="quantidade">Deseja viajar com no maximo quantas pessoas?</label>
+											<div>
+												<h:inputText styleClass="col-sm-4" rendered="true" requiredMessage="Obrigatorio"
+														converter="NumeroConverter"
+														value="#{ViajarBean.viagem.maximoParticipantes}"
+														id="quantidade">
+												</h:inputText>
+												<h:message id="msg-quantidade" for="quantidade" errorStyle="color: #a94442;"/>
+											</div>
+										</div>
+									</div>
 								</div>
 								
-								<div class="col-sm-3">
-								3
+								<div class="space-4" />
+								
+								<div class="row">	
+									<div class="col-xs-12 col-sm-12">
+										<div class="form-group">
+											<label for="valor">Estima gastar quanto?</label>
+											<div>
+												<h:inputText styleClass="col-sm-4 mask-dinheiro" converter="DinheiroConverter"
+														value="#{ViajarBean.viagem.valor}"
+														id="valor">
+												</h:inputText>
+											</div>
+										</div>
+									</div>
 								</div>
 								
-								<div class="col-sm-3">
-								4
-								</div>
 							</div>
 						</div>
 					</div>
+	
+					<!-- /section:custom/widget-box.options.transparent -->
 				</div>
-
-				<!-- /section:custom/widget-box.options.transparent -->
+	
 			</div>
-
-		</div>
+		
+			<div class="clearfix form-actions align-right">
+				<h:commandLink action="#{ViajarBean.salvar()}">
+					<button class="btn btn-info">
+						<i class="ace-icon fa fa-check"></i> Salvar
+					</button>
+					<f:ajax execute="@form" render="@form" />
+				</h:commandLink>
+			</div>
+		</h:form>
 	</ui:define>
 </ui:composition>
 </html>
