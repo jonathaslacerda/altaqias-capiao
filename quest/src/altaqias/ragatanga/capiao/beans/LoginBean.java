@@ -43,6 +43,6 @@ public class LoginBean {
 	
 	public String sair(){
 		this.sessao.logout();
-		return "login?faces-redirect=true";
+		return "../login?faces-redirect=true";
 	}
 }
