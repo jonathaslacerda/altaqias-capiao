@@ -1,0 +1,63 @@
+.has-error-validation {
+	border-color: #d16e6c !important;
+	color: #d16e6c !important;
+}
+
+.ui-selectcheckboxmenu .ui-selectcheckboxmenu-trigger .ui-icon {
+	margin-top: 9px !important;
+	margin-left: 5px !important;
+}
+
+.ui-selectcheckboxmenu .ui-selectcheckboxmenu-trigger {
+	width: 30px !important;
+}
+
+.vcart-radio {
+	
+}
+
+.vcart-radio td {
+	padding-top: 5px;
+}
+
+.vcart-radio td label {
+	display: inline-block;
+	cursor: pointer;
+	position: relative;
+	padding-left: 25px;
+	margin-right: 15px;
+}
+
+.vcart-radio td label:before {
+	content: "";
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	margin-right: 10px;
+	position: absolute;
+	left: 0;
+	bottombottom: 1px;
+	border: solid 1px #aaa;
+	background-color: #fff;
+	border-radius: 8px;
+}
+
+.vcart-radio td [type=radio] {
+	display: none;
+}
+
+.vcart-radio td [type=radio]:checked + label:before{
+	content: "\2022";
+	color: #438eb9;
+	font-size: 40px;
+	text-align: center;
+	line-height: 11px;
+}
+
+.padding-left-0{
+	padding-left: 0%;
+}
+
+.padding-left-3{
+	padding-left: 3%;
+}
